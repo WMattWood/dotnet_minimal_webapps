@@ -1,0 +1,53 @@
+﻿@page
+@model Template.Pages.SearchModel
+<h2>Search Entities</h2>
+
+<form method="post">
+    <p>
+        <label>Animal:</label>
+        <input asp-for="AnimalSearchTerm">
+    </p>
+    <p>
+        <label>Fruit:</label>
+        <input asp-for="FruitSearchTerm">
+    </p>
+    <button type="submit">Search</button>
+</form>
+
+<h2>Animal Options</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AnimauxList)
+        {
+            <tr>
+                <td>@item.Value</td>
+                <td>@item.Text</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Fruit Options</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.FruitsList)
+        {
+            <tr>
+                <td>@item.Value</td>
+                <td>@item.Text</td>
+            </tr>
+        }
+    </tbody>
+</table>

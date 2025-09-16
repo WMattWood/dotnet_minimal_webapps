@@ -1,0 +1,29 @@
+@page
+@model Template.Pages.ResultsModel
+<h2>Results</h2>
+
+<p>Animal: @Model.SelectedAnimal?.Nom (@Model.SelectedAnimal?.Id)</p>
+<p>Fruit: @Model.SelectedFruit?.Nom (@Model.SelectedFruit?.Id)</p>
+
+<a asp-page="/Search">Back to Search</a>
+
+@* @if (Model.Results.Any())
+{
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+        </tr>
+        @foreach (var res in Model.FruitResults)
+        {
+            <tr>
+                <td>@res.Id</td>
+                <td>@res.Nom</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No results found.</p>
+} *@

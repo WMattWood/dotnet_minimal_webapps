@@ -1,0 +1,47 @@
+@page
+@model Template.Pages.ResultsModel
+<h2>Results</h2>
+
+<a asp-page="/Search">Back to Search</a>
+
+@if (Model.AnimalResults.Any())
+{
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Animal ID</th>
+            <th>Animal Nom</th>
+        </tr>
+        @foreach (var animal in Model.AnimalResults)
+        {
+            <tr>
+                <td>@animal.Id</td>
+                <td>@animal.Nom</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No animals found.</p>
+}
+
+@if (Model.FruitResults.Any())
+{
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Fruit ID</th>
+            <th>Fruit Nom</th>
+        </tr>
+        @foreach (var fruit in Model.FruitResults)
+        {
+            <tr>
+                <td>@fruit.Id</td>
+                <td>@fruit.Nom</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No fruits found.</p>
+}
